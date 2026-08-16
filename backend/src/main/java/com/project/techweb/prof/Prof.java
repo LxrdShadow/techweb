@@ -8,7 +8,7 @@ public class Prof {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codeprof;
+    private Integer codeprof;
     private String nom;
     private String prenom;
     private String grade;
