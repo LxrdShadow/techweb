@@ -38,12 +38,12 @@ public class ProfController {
     }
 
     @PutMapping("/{codeprof}")
-    public Prof updateProf(@PathVariable int codeprof, @RequestBody Prof prof) {
+    public Prof updateProf(@PathVariable Integer codeprof, @RequestBody Prof prof) {
         return profService.updateProf(prof);
     }
 
     @DeleteMapping("/{codeprof}")
-    public void deleteProf(@PathVariable int codeprof) {
+    public void deleteProf(@PathVariable Integer codeprof) {
         profService.deleteProf(codeprof);
     }
 }

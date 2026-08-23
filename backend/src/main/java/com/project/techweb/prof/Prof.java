@@ -16,18 +16,18 @@ public class Prof {
     public Prof() {
     }
 
-    public Prof(int codeprof, String nom, String prenom, String grade) {
+    public Prof(Integer codeprof, String nom, String prenom, String grade) {
         this.codeprof = codeprof;
         this.nom = nom;
         this.prenom = prenom;
         this.grade = grade;
     }
 
-    public int getCodeprof() {
+    public Integer getCodeprof() {
         return codeprof;
     }
 
-    public void setCodeprof(int codeprof) {
+    public void setCodeprof(Integer codeprof) {
         this.codeprof = codeprof;
     }
 
