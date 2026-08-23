@@ -26,11 +26,8 @@ public class ProfService {
 
     public Prof updateProf(Integer codeprof, Prof prof) {
         return profRepository.findById(codeprof).map(professor -> {
-            professor.setNom(prof.getNom());
-            professor.setPrenom(prof.getPrenom());
-            professor.setGrade(prof.getGrade());
-
-            return profRepository.save(professor);
+            prof.setCodeprof(codeprof);
+            return profRepository.save(prof);
         }).orElseThrow(() -> new ProfNotFoundException(codeprof));
     }
 
