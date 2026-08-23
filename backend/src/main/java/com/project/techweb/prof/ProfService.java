@@ -20,6 +20,10 @@ public class ProfService {
         return profRepository.findAll();
     }
 
+    public List<Prof> findByNom(String nom) {
+        return profRepository.findByNomContainingIgnoreCase(nom);
+    }
+
     public Prof createProf(Prof prof) {
         return profRepository.save(prof);
     }

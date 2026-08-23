@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api/profs")
@@ -25,6 +26,11 @@ public class ProfController {
     @GetMapping
     public List<Prof> getAllProfs() {
         return profService.findAll();
+    }
+
+    @GetMapping("/search")
+    public List<Prof> searchProfsByNom(@RequestParam String nom) {
+        return profService.findByNom(nom);
     }
 
     @GetMapping("{codeprof}")
