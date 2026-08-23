@@ -12,7 +12,7 @@ public class ProfService {
         this.profRepository = profRepository;
     }
 
-    public Prof findByCodeprof(int codeprof) {
+    public Prof findByCodeprof(Integer codeprof) {
         return profRepository.findById(codeprof).orElse(null);
     }
 

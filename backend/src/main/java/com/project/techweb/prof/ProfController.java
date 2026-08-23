@@ -28,7 +28,7 @@ public class ProfController {
     }
 
     @GetMapping("{codeprof}")
-    public Prof getProfByCodeprof(@PathVariable int codeprof) {
+    public Prof getProfByCodeprof(@PathVariable Integer codeprof) {
         return profService.findByCodeprof(codeprof);
     }
 
