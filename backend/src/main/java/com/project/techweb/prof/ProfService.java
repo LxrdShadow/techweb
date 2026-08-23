@@ -24,11 +24,17 @@ public class ProfService {
         return profRepository.save(prof);
     }
 
-    public Prof updateProf(Prof prof) {
-        return profRepository.save(prof);
+    public Prof updateProf(Integer codeprof, Prof prof) {
+        return profRepository.findById(codeprof).map(professor -> {
+            professor.setNom(prof.getNom());
+            professor.setPrenom(prof.getPrenom());
+            professor.setGrade(prof.getGrade());
+
+            return profRepository.save(professor);
+        }).orElseThrow(() -> new ProfNotFoundException(codeprof));
     }
 
-    public void deleteProf(int codeprof) {
+    public void deleteProf(Integer codeprof) {
         profRepository.deleteById(codeprof);
     }
 }

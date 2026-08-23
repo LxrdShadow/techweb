@@ -39,7 +39,7 @@ public class ProfController {
 
     @PutMapping("/{codeprof}")
     public Prof updateProf(@PathVariable Integer codeprof, @RequestBody Prof prof) {
-        return profService.updateProf(prof);
+        return profService.updateProf(codeprof, prof);
     }
 
     @DeleteMapping("/{codeprof}")
